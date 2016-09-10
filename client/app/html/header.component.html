@@ -1,0 +1,36 @@
+<div class="header">
+    <div class="header_lft">
+        <div class="logo">
+            <a href="#"><img src="app/images/logo.png"></a>
+        </div>
+        <div class="navigatn">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#"> E-Coupons </a></li>
+                <li><a href="#">E-Brands </a></li>
+                <li><a href="#"> Resuse Market </a></li>
+                <li><a href="#">Lost & Found</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="header_rgt">
+        <input type="text" placeholder="Search" class="txt_box">
+        <!-- if puser logged in -->
+        <div *ngIf="isuser == true">
+            <div class="msg_box"><a [routerLink]="['/profile']">{{uname}}</a></div>
+            <div class="info_div">
+                <div class="image_div"><img src="{{profilepicpath}}" class="profilepic"> </div>
+                <div class="info_div1"><a (click)="logout()">Logout </a></div>
+            </div>
+        </div>
+        <!-- else user is not logged in -->
+        <div *ngIf="isuser == false">
+            <div class="info_div">
+                <div class="login_link">
+                    <a [routerLink]="['/login']">Login /</a>
+                    <a [routerLink]="['/register']"> Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

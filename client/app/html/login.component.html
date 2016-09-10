@@ -1,0 +1,28 @@
+<div class="content_rgt">
+    <div class="login_sec">
+        <h1>Log In</h1>
+        <form (submit)="checklogin()">
+            <ul>
+                <li>
+                    <span>Email-ID</span>
+                    <input type="email" [(ngModel)]="user.email" name="email" placeholder="Enter your email" required>
+                </li>
+                <li>
+                    <span>Password</span>
+                    <input type="password" [(ngModel)]="user.password" name="password" placeholder="Enter your password" required>
+                </li>
+                <li>
+                    <input type="checkbox">Remember Me
+                </li>
+                <li>
+                    <input type="submit" value="Log In">
+                    <a [routerLink]="['/forgotpassword']">Forgot Password</a>
+                </li>
+            </ul>
+        </form>
+        <div class="addtnal_acnt">I do not have any account yet.
+            <a [routerLink]="['/register']">Create My Account Now !</a>
+        </div>
+    </div>
+</div>
+<welcome></welcome>
